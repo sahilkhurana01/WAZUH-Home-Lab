@@ -16,32 +16,34 @@ Wazuh is a free, open-source security platform that offers:
 
 | Component | Host Role |
 |----------|------------|
-| Wazuh Manager (Ubuntu - VirtualBox) | Collects, analyzes, and stores data from agents |
+| Wazuh Manager (Kali Linux - VirtualBox) | Collects, analyzes, and stores data from agents |
 | Wazuh Agent (Windows - host machine) | Sends logs and system events to the Wazuh manager |
 
 ---
 
 ## 3. Network Configuration
 
-Use **Bridged Adapter** in VirtualBox to place the Ubuntu server on the same network as the host.
+Use **Bridged Adapter** in VirtualBox to place the Kali Linux server on the same network as the host.
 
 This allows access between the host and the guest.
+
+---
 
 ---
 
 ## 4. Prerequisites
 
 - VirtualBox installed
-- Ubuntu Server 20.04+ installed in VirtualBox (bridged networking)
+- Kali Linux (latest) installed in VirtualBox (bridged networking)
 - Internet access on Ubuntu VM
 - Administrative access on the Windows host
 - Optional: basic knowledge of Linux and system administration
 
 ---
 
-## 5. Installing the Wazuh Manager (Ubuntu)
+## 5. Installing the Wazuh Manager (Kali Linux)
 
-Run the following steps on your Ubuntu VirtualBox server.
+Run the following steps on your Kali Linux VirtualBox server.
 
 ### 5.1 Add Wazuh GPG Key
 
@@ -70,7 +72,7 @@ The script installs all required services and configures them automatically.
 
 After installation:
 
-1. Check your Ubuntu VM’s IP address:
+1. Check your Kali Linux VM’s IP address (Kali VM IP):
 
 ```bash
 ifconfig
@@ -99,9 +101,9 @@ https://<ubuntu-vm-ip>
 
 ## 8. Registering the Agent with the Manager
 
-### 8.1 Generate Agent Key on Ubuntu Manager
+### 8.1 Generate Agent Key on Kali Manager
 
-Run the agent management utility:
+Run the agent management utility on the Kali manager:
 
 ```bash
 sudo /var/ossec/bin/manage_agents
@@ -120,7 +122,7 @@ Then:
 1. Open the **Wazuh Agent Manager** GUI from the Start Menu.
 2. Paste the copied key into the appropriate field.
 3. Save and apply the key.
-4. Add the manager’s IP address (IP address of your Ubuntu manager).
+4. Add the manager’s IP address (IP address of your Kali Linux manager).
 5. Restart the agent service.
 
 You can then open the Wazuh dashboard and verify that the agent has onboarded.
