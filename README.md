@@ -29,13 +29,11 @@ This allows access between the host and the guest.
 
 ---
 
----
-
 ## 4. Prerequisites
 
 - VirtualBox installed
 - Kali Linux (latest) installed in VirtualBox (bridged networking)
-- Internet access on Ubuntu VM
+- Internet access on Kali VM
 - Administrative access on the Windows host
 - Optional: basic knowledge of Linux and system administration
 
@@ -81,7 +79,7 @@ ifconfig
 2. Open a browser on your machine and go to:
 
 ```text
-https://<ubuntu-vm-ip>
+https://<kali-vm-ip>
 ```
 
 3. Accept any browser security warning due to the self-signed certificate.
